@@ -1,32 +1,40 @@
 @font-face {
-  font-family: 'Poppins';
-  src: local('Poppins'),
-    url('../src/fonts/Poppins-Black.ttf') format('truetype'),
-    url('../src/fonts/Poppins-BlackItalic.ttf') format('truetype'),
-    url('../src/fonts/Poppins-Bold.ttf') format('truetype'),
-    url('../src/fonts/Poppins-BoldItalic.ttf') format('truetype'),
-    url('../src/fonts/Poppins-ExtraBold.ttf') format('truetype'),
-    url('../src/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype'),
-    url('../src/fonts/Poppins-ExtraLight.ttf') format('truetype'),
-    url('../src/fonts/Poppins-ExtraLightItalic.ttf') format('truetype'),
-    url('../src/fonts/Poppins-Italic.ttf') format('truetype'),
-    url('../src/fonts/Poppins-Light.ttf') format('truetype'),
-    url('../src/fonts/Poppins-LightItalic.ttf') format('truetype'),
-    url('../src/fonts/Poppins-Medium.ttf') format('truetype'),
-    url('../src/fonts/Poppins-MediumItalic.ttf') format('truetype'),
-    url('../src/fonts/Poppins-Regular.ttf') format('truetype'),
-    url('../src/fonts/Poppins-SemiBold.ttf') format('truetype'),
-    url('../src/fonts/Poppins-SemiBoldItalic.ttf') format('truetype'),
-    url('../src/fonts/Poppins-Thin.ttf') format('truetype'),
-    url('../src/fonts/Poppins-ThinItalic.ttf') format('truetype');
+  font-family: 'Poppins-Black';
+    src: url('../src/fonts/Poppins-Black.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'Poppins-Bold';
+    src: url('../src/fonts/Poppins-Bold.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'Poppins-ExtraBold';
+    src: url('../src/fonts/Poppins-ExtraBold.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'Poppins-ExtraLight';
+    src: url('../src/fonts/Poppins-ExtraLight.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'Poppins-Light';
+    src: url('../src/fonts/Poppins-Light.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'Poppins-Medium';
+    src: url('../src/fonts/Poppins-Medium.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'Poppins-Regular';
+    src: url('../src/fonts/Poppins-Regular.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'Poppins-SemiBold';
+    src: url('../src/fonts/Poppins-SemiBold.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'Poppins-Thin';
+    src: url('../src/fonts/Poppins-Thin.ttf') format('truetype')
 }
 
 body {
   margin: 0;
-  font-family: Poppins;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
