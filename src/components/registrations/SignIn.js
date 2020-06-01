@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, useState, useEffect} from 'react';
 // styles
 import {FormsContainer, Form, Legend, InputWrapper, Label, Input, Submit, Options, RememberMe, SignUpContent, Footer} from './SharedStyles';
 
@@ -10,6 +10,14 @@ const SignIn = () => {
       password: ''
     }  
   );
+
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    if(error) {
+      alert(error)
+    }
+  }, [error]);
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -23,6 +31,13 @@ const SignIn = () => {
     alert('form submitted');
   }
 
+  const validateInput = (e) => {
+    const {name, value} = e.target;
+    if (value.length === 0 || value.length <= 3) {
+      setError(`${name} can't be blank`);
+    };
+  }
+
   return (
     <FormsContainer>
       <Form onSubmit={handleSubmit}>
@@ -33,6 +48,7 @@ const SignIn = () => {
             name='email'
             value={userInput.value}
             onChange={handleChange}
+            onBlur={validateInput}
           />
           <Label>Email</Label>
         </InputWrapper>
@@ -42,6 +58,7 @@ const SignIn = () => {
             name='password'
             value={userInput.value}
             onChange={handleChange}
+            onBlur={validateInput}
           />
           <Label>Password</Label>
           <span>SHOW</span>
