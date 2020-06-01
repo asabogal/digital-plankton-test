@@ -1,8 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 // components
-import SignIn from './components/registrations/SignIn';
-import SignUp from './components/registrations/SignUp';
+import Register from './components/registrations/Register';
 
 
 const App = () => {
@@ -10,8 +9,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Switch>
-          <Route exact path='/signin' component={SignIn}/>
-          <Route exact path='/signup' component={SignUp}/>
+          <Route exact path='/' component={Register}/>
         </Switch>
       </BrowserRouter>
     </>
