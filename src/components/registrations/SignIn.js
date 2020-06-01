@@ -1,23 +1,47 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, {useReducer} from 'react';
 // styles
 import {FormsContainer, Form, Legend, InputWrapper, Label, Input, Submit, Options, RememberMe, SignUpContent, Footer} from './SharedStyles';
 
 const SignIn = () => {
 
+  const [userInput, setUserInput] = useReducer((state, newState) => ({...state, ...newState}),
+    {
+      email: '',
+      password: ''
+    }  
+  );
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setUserInput({
+      [name]: value
+    });
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('form submitted');
+  }
+
   return (
     <FormsContainer>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Legend>Sign In</Legend>
         <InputWrapper>
           <Input
-            type='text'
+            type='email'
+            name='email'
+            value={userInput.value}
+            onChange={handleChange}
           />
           <Label>Email</Label>
         </InputWrapper>
         <InputWrapper>
           <Input
-            type='email'
+            type='password'
+            name='password'
+            value={userInput.value}
+            onChange={handleChange}
           />
           <Label>Password</Label>
           <span>SHOW</span>
