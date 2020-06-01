@@ -6,6 +6,7 @@ import image from '../../images/netflix_background.png';
 const Register = () => {
   return (
     <PageContainer>
+      <div></div>
       <SignIn/>
     </PageContainer>
   );
@@ -15,6 +16,7 @@ export default Register;
 
 const PageContainer = styled.div`
   display: grid;
+  grid-template-rows: 10% 90%;
   width: 100%;
   height: 100vh;
   position: relative;
