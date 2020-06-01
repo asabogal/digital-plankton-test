@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, useState, useEffect} from 'react';
 // styles
 import {FormsContainer, Form, Legend, InputWrapper, Label, Input, Submit, Options, RememberMe, SignUpContent, Footer} from './SharedStyles';
 
@@ -10,6 +10,14 @@ const SignUp = () => {
       password: ''
     }  
   );
+
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    if(error) {
+      alert(error)
+    }
+  }, [error]);
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -23,6 +31,13 @@ const SignUp = () => {
     alert('form submitted');
   }
 
+  const validateInput = (e) => {
+    const {name, value} = e.target;
+    if (value.length === 0 || value.length <= 3) {
+      setError(`${name} can't be blank`);
+    };
+  }
+
   return (
     <FormsContainer>
       <Form onSubmit={handleSubmit}>
@@ -33,6 +48,7 @@ const SignUp = () => {
             name='name'
             value={userInput.value}
             onChange={handleChange}
+            onBlur={validateInput}
           />
           <Label>Name</Label>
         </InputWrapper>
@@ -42,6 +58,7 @@ const SignUp = () => {
             name='email'
             value={userInput.value}
             onChange={handleChange}
+            onBlur={validateInput}
           />
           <Label>Email</Label>
         </InputWrapper>
@@ -51,6 +68,7 @@ const SignUp = () => {
             name='password'
             value={userInput.value}
             onChange={handleChange}
+            onBlur={validateInput}
           />
           <Label>Password</Label>
           <span>SHOW</span>
@@ -62,15 +80,6 @@ const SignUp = () => {
           />
         </Submit>
         </Form>
-        {/* <Options>
-          <RememberMe>
-            <input
-              type='checkbox'
-            />
-            <label>Remember Me</label>
-          </RememberMe>
-          <a href='#'>Need Help?</a>
-        </Options> */}
         <SignUpContent>
           <h4>Already Signed up?</h4>
           <span><p>Log in now.</p></span>
