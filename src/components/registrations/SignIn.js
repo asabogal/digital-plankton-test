@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 // styles
-import {FormsContainer, Form, Legend, InputWrapper, Label, Input, Submit, Options, RememberMe, SignUpContent} from './SharedStyles';
+import {FormsContainer, Form, Legend, InputWrapper, Label, Input, Submit, Options, RememberMe, SignUpContent, Footer} from './SharedStyles';
 
 const SignIn = () => {
 
@@ -28,20 +28,23 @@ const SignIn = () => {
             value='Sign In'
           />
         </Submit>
+        </Form>
         <Options>
           <RememberMe>
-            <Input
+            <input
               type='checkbox'
             />
-            <Label>Remember Me</Label>
+            <label>Remember Me</label>
           </RememberMe>
           <a href='#'>Need Help?</a>
         </Options>
         <SignUpContent>
           <h4>New to Netflix?</h4>
-          <span><Link to='/signup'>Sign up now</Link></span>
+          <span><p>Sign up now.</p></span>
         </SignUpContent>
-      </Form>
+        <Footer>
+          <p>This form and the contents of this page are for ilustrational purposes only.</p>
+        </Footer>
     </FormsContainer>
   );
 };
