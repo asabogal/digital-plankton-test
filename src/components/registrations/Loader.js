@@ -1,10 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 
-const Loader = () => {
+const Loader = (props) => {
+
+  useEffect(() => {
+    setTimeout(() => {
+      redirect()
+    }, 3000)
+  })
+
+  const redirect = () => {
+    props.history.push('/profile');
+  }
+  
   return (
     <Spinner>
-      
     </Spinner>
   );
 };
