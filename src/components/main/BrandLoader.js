@@ -13,15 +13,15 @@ const BrandLoader = () => {
 export default BrandLoader;
 
 const BrandContainer = styled.div`
-  margin: 100px auto;
+  margin: 0 auto;
   width: 80vw;
-  animation: ScaleIn 2.6s ease forwards;
+  animation: ScaleIn 3.2s ease forwards;
   overflow: hidden;
   position: relative;
   top: 15%;
   img {
     width: 100%;
-    animation: FadeRight 1s ease forwards 1s;
+    animation: FadeRight 1.2s ease forwards 1.2s;
   }
   &::before {
     content: '';
@@ -32,8 +32,7 @@ const BrandContainer = styled.div`
     width: 100%;
     height: 500px;
     transform: translateX(100%) rotate(-45deg); 
-    animation: Cut 0.6s ease forwards 1s;
-    transition: opacity 1s;
+    animation: Cut 0.6s ease forwards 1.2s;
     z-index: 99;
     @keyframes Cut {
       from {
@@ -55,19 +54,13 @@ const BrandContainer = styled.div`
       transform: scale(1);
       opacity: 1;
     } 
-    100% {
+      
+      100% {
       transform: scale(2.5);
       opacity: 0;
     }
   }
 
-  @keyframes ZoomIn {
-    from {
-      transform: scale(0);
-    } to {
-      transform: scale(5);
-    }
-  }
 
   @keyframes FadeRight {
     from {
