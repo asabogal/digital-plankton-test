@@ -11,16 +11,18 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Navigation>
-      <LogoContainer>
-        <img src={brand} alt='netflix-logo'/>
-      </LogoContainer>
-      <LinksContainer>
-        <Link to='/'>Home</Link>
-        <Link to='/'>TV Shows</Link>
-        <Link to='/'>Movies</Link>
-        <Link to='/'>Latest</Link>
-        <Link to='/'>My List</Link>
-      </LinksContainer>
+        <LogoContainer>
+          <Link to='/'>
+            <img src={brand} alt='netflix-logo'/>
+          </Link>
+        </LogoContainer>
+        <LinksContainer>
+          <Link to='/'>Home</Link>
+          <Link to='/'>TV Shows</Link>
+          <Link to='/'>Movies</Link>
+          <Link to='/'>Latest</Link>
+          <Link to='/'>My List</Link>
+        </LinksContainer>
       </Navigation>
       <IconsContainer>
         <Link to='/'>
@@ -54,11 +56,12 @@ const Navigation = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 20px;
 `;
 
 const LogoContainer = styled.div`
-  width: 150px;
-  height: 60px;
+  width: 125px;
+  height: 50px;
   padding-left: 20px;
   padding-right: 40px;
   img {
@@ -70,7 +73,7 @@ const LogoContainer = styled.div`
 const LinksContainer = styled.div`
   display: flex;
   a {
-    color: #858585;
+    color: #e0dede;
     font-size: 0.9rem;
     padding-right: 20px;
     text-decoration: none;
@@ -84,7 +87,7 @@ const IconsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding-right: 40px;
+  padding-right: 80px;
   svg {
     padding-left: 20px;
   }
