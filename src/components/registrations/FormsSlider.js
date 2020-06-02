@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 
-const FormsSlider = () => {
+const FormsSlider = (props) => {
 
   const [x, setX] = useState(0);
 
@@ -16,12 +16,14 @@ const FormsSlider = () => {
   };
 
   return (
-    <Slider>
+    <Slider loading={props.loading}>
       <FormsWrapper style={{transform: `translateX(${x}%)`}}>
         <SignIn
+          startLoader={props.startLoader}
           moveRight={moveRight}
         />
         <SignUp
+          startLoader={props.startLoader}
           moveLeft={moveLeft}
         />
       </FormsWrapper>
@@ -37,6 +39,21 @@ const Slider = styled.div`
   max-width: 445px;
   height: 665px;
   overflow: hidden;
+  animation: ${props => props.loading ? 'SlideDown 0.6s ease forwards' : 'SlideUp 0.6s ease'};
+  @keyframes SlideUp {
+    from {
+      transform: translateY(110%);
+    } to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes SlideDown {
+    from {
+      transform: translateY(0);
+    } to {
+      transform: translateY(200%);
+    }
+  }
 `;
 
 const FormsWrapper = styled.div`
