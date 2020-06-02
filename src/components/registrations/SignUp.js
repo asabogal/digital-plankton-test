@@ -26,7 +26,8 @@ const SignUp = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('form submitted');
+    e.preventDefault();
+    setTimeout(() => {props.startLoader()}, 1500)
   }
 
   const validEmail = (email) => {
@@ -51,7 +52,7 @@ const SignUp = (props) => {
 
   return (
     <FormsContainer>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} noValidate>
         <Legend>Sign Up</Legend>
         <InputWrapper>
           <Input
