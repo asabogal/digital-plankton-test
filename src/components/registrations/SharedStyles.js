@@ -123,9 +123,8 @@ export const SignUpContent = styled.div`
   display: flex;
   align-content: center;
   justify-content: flex-end;
-  padding-bottom: 2rem;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   font-size: 0.9rem;
   color: #858585;
   h4 {
