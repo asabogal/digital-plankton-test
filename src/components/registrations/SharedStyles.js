@@ -49,6 +49,7 @@ export const Input = styled.input`
   background-color: #333;
   border: none;
   border-radius: 5px;
+  border-bottom: ${props => props.error ? '2px solid #e87c03' : 'none'};
   color: white;
   &:focus {
     background-color: #454545;
@@ -57,6 +58,14 @@ export const Input = styled.input`
       top: 0.3rem;
     }
   }
+`;
+
+export const Error = styled.p`
+  color: #e87c03;
+  margin-bottom: 1rem;
+  padding: 0;
+  font-size: 0.7rem;
+  display: block;
 `;
 
 export const Submit = styled.div`
@@ -76,7 +85,6 @@ export const Submit = styled.div`
       cursor: pointer;
     }
   }
-  
 `;
 
 export const Options = styled.div`
@@ -116,6 +124,7 @@ export const SignUpContent = styled.div`
   align-content: center;
   justify-content: flex-end;
   padding-bottom: 2rem;
+  margin-top: 4rem;
   margin-bottom: 4rem;
   font-size: 0.9rem;
   color: #858585;
