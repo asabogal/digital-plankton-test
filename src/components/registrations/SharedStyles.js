@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FormsContainer = styled.div`
   justify-self: center;
   background-color: rgba(0,0,0,0.73);
-  width: 320px;
+  min-width: 320px;
   height: 610px;
   padding: 2rem 4rem;
   z-index: 2;
