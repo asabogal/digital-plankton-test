@@ -2,7 +2,7 @@ import React, {useReducer, useState, useEffect} from 'react';
 // styles
 import {FormsContainer, Form, Legend, InputWrapper, Label, Input, Submit, Options, RememberMe, SignUpContent, Footer, Error} from './SharedStyles';
 
-const SignIn = () => {
+const SignIn = (props) => {
 
   const [userInput, setUserInput] = useReducer((state, newState) => ({...state, ...newState}),
     {
@@ -93,7 +93,7 @@ const SignIn = () => {
         </Options>
         <SignUpContent>
           <h4>New to Netflix?</h4>
-          <span><p>Sign up now.</p></span>
+          <span><p onClick={props.moveRight}>Sign up now.</p></span>
         </SignUpContent>
         <Footer>
           <p>This form and the contents of this page are for illustrational purposes only.</p>
