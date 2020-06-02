@@ -4,7 +4,7 @@ import FormsSlider from './FormsSlider';
 import Loader from './Loader';
 import image from '../../images/netflix_background.png';
 
-const Register = () => {
+const Register = (props) => {
 
   const [loading, setLoading] = useState(false);
 
@@ -15,7 +15,7 @@ const Register = () => {
   return (
     <PageContainer>
       <div></div>
-      {loading && <Loader/>}
+      {loading && <Loader history={props.history}/>}
       {<FormsSlider loading={loading} startLoader={startLoader}/>}
     </PageContainer>
   );
