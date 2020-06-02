@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import FormsSlider from './FormsSlider';
 import Loader from './Loader';
+import Header from './Header';
 import image from '../../images/netflix_background.png';
 
 const Register = (props) => {
@@ -14,7 +15,7 @@ const Register = (props) => {
 
   return (
     <PageContainer>
-      <div></div>
+      <Header/>
       {loading && <Loader history={props.history}/>}
       {<FormsSlider loading={loading} startLoader={startLoader}/>}
     </PageContainer>
