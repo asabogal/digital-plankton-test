@@ -29,12 +29,23 @@ const SignUp = () => {
     alert('form submitted');
   }
 
+  const validEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
   const validateInput = (e) => {
     const {name, value} = e.target;
-    if (value.length === 0 || value.length <= 3) {
-      setError({...error, [name]: `${name} can't be blank`});
-    } else {
-      setError(``);
+    if (name === 'name' && value.length <= 3) {
+      setError({...error, [name]: `${name} must contain at least 4 characters.`});
+    } else if (name === 'email' && value.length === 0) {
+        setError({...error, [name]: `${name} can't be blank.`});
+     } else if (name === 'email' && !validEmail(value)) {
+        setError({...error, [name]: `Not a valid email format.`});
+     } else if (name === 'password' && value.length <= 7) {
+        setError({...error, [name]: `${name} must contain at least 8 characters.`});
+    }
+    else {
+      setError({...error, [name]: ''});
     }
   }
 
