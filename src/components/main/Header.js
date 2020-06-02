@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 import brand from '../../images/Netflix_Logo_RGB.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -14,24 +15,28 @@ const Header = () => {
         <img src={brand} alt='netflix-logo'/>
       </LogoContainer>
       <LinksContainer>
-        <a href='#'>Home</a>
-        <a href='#'>TV Shows</a>
-        <a href='#'>Movies</a>
-        <a href='#'>Latest</a>
-        <a href='#'>My List</a>
+        <Link to='/'>Home</Link>
+        <Link to='/'>TV Shows</Link>
+        <Link to='/'>Movies</Link>
+        <Link to='/'>Latest</Link>
+        <Link to='/'>My List</Link>
       </LinksContainer>
       </Navigation>
       <IconsContainer>
-        <FontAwesomeIcon
-          size='lg'
-          color='white'
-          icon={faSearch}
-        />
-        <FontAwesomeIcon
-          size='lg  '
-          color='white'
-          icon={faUserAlt}
-        />
+        <Link to='/'>
+          <FontAwesomeIcon
+            size='lg'
+            color='white'
+            icon={faSearch}
+          />
+        </Link>
+        <Link to='/'>
+          <FontAwesomeIcon
+            size='lg  '
+            color='white'
+            icon={faUserAlt}
+          />
+        </Link>
       </IconsContainer>
   </HeaderContainer>
   );
