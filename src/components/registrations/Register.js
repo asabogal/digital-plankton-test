@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import SignIn from './SignIn';
+import FormsSlider from './FormsSlider';
 import image from '../../images/netflix_background.png';
 
 const Register = () => {
   return (
     <PageContainer>
       <div></div>
-      <SignIn/>
+      <FormsSlider/>
     </PageContainer>
   );
 };
