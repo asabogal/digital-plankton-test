@@ -34,10 +34,10 @@ export const InputWrapper = styled.div`
 `;
 
 export const Label = styled.label`
-  font-size: 0.9rem;
+  font-size: ${props => props.valid ? '0.6rem' : '0.9rem'};
   font-family: 'Poppins-Light';
   position: absolute;
-  top: 1.1rem;
+  top: ${props => props.valid ? '0.3rem' : '1.1rem'};
   left: 1rem;
   color: #858585;
   transition: font-size 0.2s ease, top 0.2s ease;
@@ -51,6 +51,7 @@ export const Input = styled.input`
   border-radius: 5px;
   border-bottom: ${props => props.error ? '2px solid #e87c03' : 'none'};
   color: white;
+  font-size: 0.95rem;
   &:focus {
     background-color: #454545;
     + label {
