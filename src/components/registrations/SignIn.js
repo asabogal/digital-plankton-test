@@ -59,8 +59,7 @@ const SignIn = () => {
             onBlur={validateInput}
             error={error.email}
           />
-          <Label>Email</Label>
-          
+          <Label valid={userInput.email.length > 0 ? true : false}>Email</Label>
         </InputWrapper>
         {error.email && <Error>{error.email}</Error>}
         <InputWrapper>
@@ -72,7 +71,7 @@ const SignIn = () => {
             onBlur={validateInput}
             error={error.password}
           />
-          <Label>Password</Label>
+          <Label valid={userInput.password.length > 0 ? true : false}>Password</Label>
           <span>SHOW</span>
         </InputWrapper>
         {error.password && <Error>{error.password}</Error>}
@@ -97,7 +96,7 @@ const SignIn = () => {
           <span><p>Sign up now.</p></span>
         </SignUpContent>
         <Footer>
-          <p>This form and the contents of this page are for ilustrational purposes only.</p>
+          <p>This form and the contents of this page are for illustrational purposes only.</p>
         </Footer>
     </FormsContainer>
   );
