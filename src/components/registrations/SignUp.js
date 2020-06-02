@@ -1,22 +1,20 @@
 import React, {useReducer, useState, useEffect} from 'react';
 // styles
-import {FormsContainer, Form, Legend, InputWrapper, Label, Input, Submit, Options, RememberMe, SignUpContent, Footer} from './SharedStyles';
+import {FormsContainer, Form, Legend, InputWrapper, Label, Input, Submit, Options, RememberMe, SignUpContent, Footer, Error} from './SharedStyles';
 
 const SignUp = () => {
 
   const [userInput, setUserInput] = useReducer((state, newState) => ({...state, ...newState}),
     {
+      name: '',
       email: '',
       password: ''
     }  
   );
 
-  const [error, setError] = useState('');
+  const [error, setError] = useState({name: '', email: '', password: ''});
 
   useEffect(() => {
-    if(error) {
-      alert(error)
-    }
   }, [error]);
 
   const handleChange = (e) => {
@@ -34,8 +32,10 @@ const SignUp = () => {
   const validateInput = (e) => {
     const {name, value} = e.target;
     if (value.length === 0 || value.length <= 3) {
-      setError(`${name} can't be blank`);
-    };
+      setError({...error, [name]: `${name} can't be blank`});
+    } else {
+      setError(``);
+    }
   }
 
   return (
@@ -49,9 +49,11 @@ const SignUp = () => {
             value={userInput.value}
             onChange={handleChange}
             onBlur={validateInput}
+            error={error.name}
           />
           <Label>Name</Label>
         </InputWrapper>
+        {error.name && <Error>{error.name}</Error>}
         <InputWrapper>
           <Input
             type='email'
@@ -59,9 +61,11 @@ const SignUp = () => {
             value={userInput.value}
             onChange={handleChange}
             onBlur={validateInput}
+            error={error.email}
           />
           <Label>Email</Label>
         </InputWrapper>
+        {error.email && <Error>{error.email}</Error>}
         <InputWrapper>
           <Input
             type='password'
@@ -69,10 +73,12 @@ const SignUp = () => {
             value={userInput.value}
             onChange={handleChange}
             onBlur={validateInput}
+            error={error.password}
           />
           <Label>Password</Label>
           <span>SHOW</span>
         </InputWrapper>
+        {error.password && <Error>{error.password}</Error>}
         <Submit>
           <Input
             type='submit'
