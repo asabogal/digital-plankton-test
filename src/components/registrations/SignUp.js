@@ -1,6 +1,6 @@
 import React, {useReducer, useState, useEffect} from 'react';
 // styles
-import {FormsContainer, Form, Legend, InputWrapper, Label, Input, Submit, Options, RememberMe, SignUpContent, Footer, Error} from './SharedStyles';
+import {FormsContainer, Form, Legend, InputWrapper, Label, Input, Submit, SignUpContent, Footer, Error} from './SharedStyles';
 
 const SignUp = (props) => {
 

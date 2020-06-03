@@ -36,7 +36,7 @@ const MyListSlider = () => {
     return pictures.map((picture, index) => {
       return (
         <Thumbnail key={index}>
-          <img src={picture}/>
+          <img src={picture} alt='my list movie'/>
         </Thumbnail>
       )
     })
