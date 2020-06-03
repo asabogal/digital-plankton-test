@@ -26,7 +26,7 @@ const SignUp = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    e.preventDefault();
+    props.handleLogin();
     setTimeout(() => {props.startLoader()}, 1500)
   }
 

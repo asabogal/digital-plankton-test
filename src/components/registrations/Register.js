@@ -17,7 +17,10 @@ const Register = (props) => {
     <PageContainer>
       <Header/>
       {loading && <Loader history={props.history}/>}
-      {<FormsSlider loading={loading} startLoader={startLoader}/>}
+      {<FormsSlider 
+        loading={loading} 
+        startLoader={startLoader} 
+        handleLogin={props.handleLogin}/>}
     </PageContainer>
   );
 };

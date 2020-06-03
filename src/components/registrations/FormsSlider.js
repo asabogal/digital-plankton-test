@@ -21,10 +21,12 @@ const FormsSlider = (props) => {
         <SignIn
           startLoader={props.startLoader}
           moveRight={moveRight}
+          handleLogin={props.handleLogin}
         />
         <SignUp
           startLoader={props.startLoader}
           moveLeft={moveLeft}
+          handleLogin={props.handleLogin}
         />
       </FormsWrapper>
     </Slider>
