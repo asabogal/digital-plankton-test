@@ -55,11 +55,11 @@ const BrandContainer = styled.div`
       opacity: 1;
     } 
       80% {
-      transform: scale(2.2);
+      transform: scale(1.8);
       opacity: 1;
     }
     100% {
-      transform: scale(2.2);
+      transform: scale(1.8);
       opacity: 0;
     }
   }
