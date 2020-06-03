@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +19,16 @@ import hank from '../../images/browser/15_hank.png';
 
 const MyListSlider = () => {
 
+  const [x, setX] = useState(0);
+
+  const moveLeft = () => {
+    x === 0 ? setX(-100) : setX(x + 100);
+  };
+
+  const moveRight = () => {
+    x === -100 ? setX(0) : setX(x - 100);
+  };
+
   const picturesOne = [blood, space, history, spy, gates, mossad];
   const picturesTwo = [machina, senna, taxi, legend, miles, hank];
 
@@ -34,20 +44,20 @@ const MyListSlider = () => {
 
   return (
     <Slider>
-      <Section>
+      <Section style={{transform: `translateX(${x}%)`}}>
         {renderPictures(picturesOne)}
       </Section>
-      <Section>
+      <Section style={{transform: `translateX(${x}%)`}}>
         {renderPictures(picturesTwo)}
       </Section>
-      <LeftButton>
+      <LeftButton onClick={moveLeft}>
         <FontAwesomeIcon
           icon={faChevronLeft}
           size='3x'
           color='white'
         />
       </LeftButton>
-      <RightButton>
+      <RightButton onClick={moveRight}>
         <FontAwesomeIcon
           icon={faChevronRight}
           size='3x'
@@ -64,6 +74,7 @@ const Slider = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 100%);
   position: relative;
+  overflow: hidden;
   &:hover {
     button {
       opacity: 1;
@@ -76,6 +87,7 @@ const Section = styled.div`
   grid-template-columns: repeat(6, auto);
   width: 100%;
   position: relative;
+  transition: 0.5s;
 `;
 
 const Thumbnail = styled.div`
