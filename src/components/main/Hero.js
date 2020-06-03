@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from './Header';
 import gems from '../../images/uncut_gems.png';
 import {PlayButton, InfoButton} from '../utils/Buttons';
+import MyListSlider from './MyListSlider';
 
 const Hero = () => {
   return (
@@ -23,7 +24,8 @@ const Hero = () => {
         </InfoContainer>
       </ContentContainer>
       <MyListContainer>
-      <h1>SLIDER</h1>
+        <h3>My List</h3>
+        <MyListSlider/>
       </MyListContainer>
     </HeroContainer>
   );
@@ -33,7 +35,7 @@ export default Hero;
 
 const HeroContainer = styled.div`
   display: grid;
-  grid-template-rows: 10% 70% 30%;
+  grid-template-rows: 10% 65% 35%;
   background: url(${props => props.image}) no-repeat;
   background-position: center center;
   background-size: cover;
@@ -89,5 +91,8 @@ const Buttons = styled.div`
 `;
 
 const MyListContainer = styled.div`
-  border: 1px solid blue;
+  h3 {
+    margin-left: 50px;
+    color: #e5e5e5;
+  }
 `;
