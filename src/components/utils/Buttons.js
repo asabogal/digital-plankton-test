@@ -21,7 +21,7 @@ export const PlayButton = styled.button`
 export const InfoButton = styled(PlayButton)`
   background-color: rgba(141, 141, 141, 0.5);
   color: white;
-  width: 125px;
+  width: 130px;
   &:hover {
     background-color: rgba(88, 88, 88, 0.5);
   }
