@@ -1,11 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import BrandLoader from './BrandLoader';
+import Browse from './Browse';
 
 const Profile = () => {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading((false))
+    }, 4500)
+  })
+
   return (
     <PageContainer>
-      <BrandLoader/>
+      {loading && <BrandLoader/>}
+      {!loading && <Browse/>}
     </PageContainer>
   );
 };
