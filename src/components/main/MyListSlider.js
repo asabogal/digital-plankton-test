@@ -88,13 +88,20 @@ const Section = styled.div`
   width: 100%;
   position: relative;
   transition: 0.5s;
+  margin: 30px 0;
 `;
 
 const Thumbnail = styled.div`
   padding: 0 2px;
+  transition: 0.5s;
   img {
     width: 100%;
     height: 100%;
+  }
+  &:hover {
+    transform: scale(1.4);
+    margin: 0px 40px;
+    cursor:pointer;
   }
 `;
 
