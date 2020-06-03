@@ -15,7 +15,7 @@ export default BrandLoader;
 const BrandContainer = styled.div`
   margin: 0 auto;
   width: 80vw;
-  animation: ScaleIn 3.2s ease forwards;
+  animation: ScaleIn 4.5s ease forwards;
   overflow: hidden;
   position: relative;
   top: 15%;
@@ -50,13 +50,16 @@ const BrandContainer = styled.div`
       transform: scale(1);
       opacity: 1;
     }
-      70% {
+      60% {
       transform: scale(1);
       opacity: 1;
     } 
-      
-      100% {
-      transform: scale(2.5);
+      80% {
+      transform: scale(2.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.2);
       opacity: 0;
     }
   }
